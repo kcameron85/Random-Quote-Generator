@@ -65,24 +65,18 @@ function printQuote() {
 	const randomQuote = getRandomQuote();
 	let html = `
 		<p class="quote">${randomQuote.quote}</p>
-		<p class="source">${randomQuote.source}, 
-	`;
+		<p class="source">${randomQuote.source}`;
 	
 	if (randomQuote.citation) {
-		html += `
-			<span>${randomQuote.citation}, </span>
-		`;
+		html += `<span class="citation">${randomQuote.citation}</span>`;
 	}
 	
 	if (randomQuote.date) {
-		html += `
-			<span>${randomQuote.date}</span>
-		`;
+		html += `<span class="year">${randomQuote.date}</span>`;
 	}
 	
 	html += `
-		</p>
-	`;
+		</p>`;
 	
 	return document.getElementById('quote-box').innerHTML = html;
 	
